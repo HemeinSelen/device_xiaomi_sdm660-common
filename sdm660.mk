@@ -39,6 +39,7 @@ endif
 
 # Inherit proprietary files
 $(call inherit-product, vendor/xiaomi/sdm660-common/sdm660-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/MiuiCamera/config.mk)
 
 # Common Tree Path
 COMMON_PATH := device/xiaomi/sdm660-common
@@ -374,8 +375,6 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(COMMON_PATH)/overlay \
-    $(COMMON_PATH)/overlay-awaken \
-    $(COMMON_PATH)/overlay-lineage
 
 # RRO configuration
 TARGET_USES_RRO := true
